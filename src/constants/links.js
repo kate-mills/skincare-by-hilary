@@ -8,8 +8,8 @@ const navigationLinks = [
     id: 1,
   },
   {
-    page: "About",
-    path: "/about/",
+    page: "Treatments",
+    path: "/treatments/",
     id: 2,
   },
   {
@@ -25,14 +25,14 @@ const socialLinks = [
     id: 1,
     label: "Go to our Facebook Page",
     name: 'facebook',
-    url: "https://facebook.com/yourfacebookpage",
+    url: "https://www.facebook.com/pages/Hilary-Molloy-skin-artistry-renewal/286199431401479",
   },
   {
     icon: <GrInstagram />,
     id: 2,
     label: "Go to our Instagram Page",
     name: 'instagram',
-    url: "https://instagram.com/yourinsahandle",
+    url: "https://instagram.com/itshilarymolloy",
   },
 ]
 
