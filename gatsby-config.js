@@ -1,6 +1,6 @@
-const siteUrl = `https://gatsby-seo-business-starter.netlify.app` // change to .com url
-const netlifyUrl = `https://gatsby-seo-business-starter.netlify.app`
-const companyName = `Gatsby SEO Business Starter`
+const siteUrl = `https://skincare-by-hilary.netlify.app` // change to .com url
+const netlifyUrl = `https://skincare-by-hilary.netlify.app`
+const companyName = `Skincare By Hilary`
 const description = `${companyName} - Kick off your next, great Gatsby project with this seo business (with postal address) starter. Just put your info in siteMetadata.`
 
 module.exports = {
@@ -18,30 +18,31 @@ module.exports = {
       address: {
         name: `${companyName}`,
         street: `555 Example st.`,
-        city: `City`,
+        city: `Napa`,
         state: `CA`,
-        zip: `99999`,
+        zip: `94558`,
         country: `USA`,
       },
       description: `${description}`,
-      email: `mailto:customerservice@example.com`,
+      email: `mailto:skinandmakeup@yahoo.com`,
       displayEmail: {
-        prefix: `customerservice`,
-        suffix: `@example`,
+        prefix: `skinandmakeup`,
+        suffix: `@yahoo`,
         ext: `.com`,
       },
       geo: {
-        lat: 38.329239,
-        long: -122.295921,
+        lat: 38.298606261163506,
+        long: -122.29030346027331,
       },
       logo: `${siteUrl}/images/logo.png`, // ./static/images/
       name: `${companyName}`,
-      phone: `+1-555-555-5555`,
-      displayPhone: `(555) 555-5555`,
+      phone: `+1-707-315-3329`,
+      displayPhone: `(707) 315-3329`,
       priceRange: `$$$`,
       otherUrls: [
-        `https://www.facebook.com/example`,
-        `https://instagram.com/example`,
+        `https://www.facebook.com/pages/Hilary-Molloy-skin-artistry-renewal/286199431401479`,
+        `http://www.yelp.com/biz/hilary-molloy-napa`,
+        `https://instagram.com/itshilarymolloy`,
       ],
       url: `${siteUrl}`,
     },
@@ -60,14 +61,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-seo-business-starter`,
-        short_name: `Seo Business`,
+        name: `Skincare By Hilary`,
+        short_name: `Hilary Molloy`,
         start_url: `/`,
         description: `${description}`,
         background_color: `#ffb1b1`,
         theme_color: `#ffb1b1`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
         crossOrigin: `use-credentials`,
         icon_options: {
           purpose: `any maskable`,

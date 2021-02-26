@@ -10,13 +10,13 @@ const Contact = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Contact Us"
-        description="Unique contact page description goes here."
+        title="Contact Hilary"
+        description="Get scheduled now with Hilary Molloy"
         image={data.seoImg.childImageSharp.fluid.src}
       />
       <PageWrapper>
-        <Banner title="Contact Us">
-          <p className="form-instructions">Please call/text us at <PhoneNumber/>, or contact us via the form below and we'll get back to your as soon as we can.</p>
+        <Banner title="Contact Hilary">
+          <p className="form-instructions">Please call/text Hilary at <PhoneNumber/>, or use the form below and Hilary will get back to your as soon as she can.</p>
           <p className="form-instructions">Thank you!</p>
         </Banner>
         <div className="flexible">
@@ -47,7 +47,7 @@ const PageWrapper = styled.section`
 
 export const query = graphql`
   {
-    seoImg: file(relativePath: { eq: "pink-astronaut.jpg" }) {
+    seoImg: file(relativePath: { eq: "default-image.jpg" }) {
       childImageSharp {
         fluid {
           src

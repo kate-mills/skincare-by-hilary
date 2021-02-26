@@ -10,11 +10,11 @@ const IndexPage = () => (
       <FixedImage />
       <Btn
         to="/contact"
-        text="Contact us"
+        text="Get an appointment"
         backgroundColor="var(--grey)"
         color="var(--black)"
-        hoverColor="coral"
-        hoverBackground="hotpink"
+        hoverColor="var(--primaryColor)"
+        hoverBackground="var(--primaryDark)"
       />
     </Banner>
   </Layout>

@@ -37,7 +37,7 @@ const SectionWrapper = styled.section`
 
 export const query = graphql`
   {
-    seoImg: file(relativePath: { eq: "gatsby-icon.png" }) {
+    seoImg: file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
         fluid(maxWidth:220) {
           src
