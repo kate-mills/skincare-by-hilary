@@ -1,7 +1,7 @@
 const siteUrl = `https://skincare-by-hilary.netlify.app` // change to .com url
 const netlifyUrl = `https://skincare-by-hilary.netlify.app`
 const companyName = `Skincare By Hilary`
-const description = `${companyName} - Kick off your next, great Gatsby project with this seo business (with postal address) starter. Just put your info in siteMetadata.`
+const description = `${companyName} - Schedule Now! Hilary's treatments include makeup, eyelash extensions, waxing, tinting, & facial spa treatments in Napa, CA.`
 
 module.exports = {
   siteMetadata: {
@@ -90,4 +90,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  flags: { DEV_SSR: false }
 }
