@@ -8,7 +8,7 @@ const Footer = ()=>{
     <div>
       <hr/>
     <FooterWrapper>
-      <p className="follow-us-on">Follow us on</p>
+      <p className="follow-us-on">Follow Hilary on</p>
       <div className="social-icons">
         {
           socialLinks.map(({icon, id, label, name, url}) => {
@@ -95,7 +95,6 @@ const FooterWrapper = styled.footer`
   }
   .tiny-last-p {
     font-size: 0.75rem;
-    margin-bottom: unset;
   }
   @media (min-width: 768px) {
     .phone-email-box{

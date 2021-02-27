@@ -17,8 +17,8 @@ const Layout = ({ children }) => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div style={{margin:`1rem auto`,maxWidth:960,padding:`0 1.0875rem 1.45rem`,}}>
         <main>{children}</main>
-        <Footer/>
       </div>
+        <Footer/>
     </>
   )
 }
