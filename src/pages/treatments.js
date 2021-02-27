@@ -6,40 +6,41 @@ import { SEO, Banner, FluidImage, Title, Btn } from "../components/Complete"
 
 import styled from 'styled-components'
 
-const About = ({ data }) => {
+const Treatments = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="About Us"
-        description="Unique about page description goes here."
+        title="Treatments"
+        description="Schedule Now! Skincare by Hilary's services include makeup, eyelash extensions, waxing, tinting, & facial spa treatments in Napa, CA."
         image={data.seoImg.childImageSharp.fluid.src}
       />
       <SectionWrapper>
-      <Banner title="About Us" subtitle="Welcome to the About us page.">
-        <div className="centered-fluid-image">
-          <FluidImage maxWidth="220px" fluid={data.seoImg.childImageSharp.fluid}/>
+      <Banner title="Spa Treatments" subtitle="Makeup Atrtistry | Eyelash Extensions | Waxing | Tinting | Facials">
+        <div className="centered-image">
+          <FluidImage maxWidth="600px" fluid={data.seoImg.childImageSharp.fluid}/>
         </div>
-        <Btn to="/" text="Return to the homepage" />
       </Banner>
-        <Title title="Our" subtitle="Location"/>
-    </SectionWrapper>
+        <Title title="Waxing" subtitle="Services"/>
+        <div className="center"><Btn to="/" text="Back to Home Page"/></div>
+      </SectionWrapper>
     </Layout>
   )
 }
 
 const SectionWrapper = styled.section`
-  & .centered-fluid-image{
-    max-width: 220px;
-    width: 220px; /* needed to center img.*/
-    margin: 0 auto;
+  & {
+    .centered-image{
+      max-width: 600px; /* needed to center img */
+      margin: 0 auto;
+    }
   }
 `
 
 export const query = graphql`
   {
-    seoImg: file(relativePath: { eq: "icon.png" }) {
+    seoImg: file(relativePath: { eq: "treatments.jpg" }) {
       childImageSharp {
-        fluid(maxWidth:220) {
+        fluid(maxWidth:600) {
           src
           ...GatsbyImageSharpFluid
         }
@@ -47,4 +48,4 @@ export const query = graphql`
     }
   }
 `
-export default About
+export default Treatments
