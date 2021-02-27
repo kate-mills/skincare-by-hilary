@@ -30,6 +30,7 @@ const SEO = ({ title, description, image, article, lang }) => {
     <React.Fragment>
       <Helmet
         title={seo.title}
+        description={seo.description}
         htmlAttributes={{
           lang,
         }}
