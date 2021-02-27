@@ -37,6 +37,7 @@ const Nav = ({toggleSidebar}) => {
 }
 
 const NavContainer = styled.nav`
+  background: var(--grey);
   height: 5rem;
   display: flex;
   align-items: center;

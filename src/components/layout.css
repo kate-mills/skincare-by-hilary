@@ -72,6 +72,7 @@ template {
   display: none;
 }
 a {
+  color: var(--black);
   background-color: transparent;
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
@@ -614,17 +615,18 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+/* Start utility classes */
+
+.center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* End utility classes */
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
-}
-
-
-/* Colors to change later */
-a{
-  color: var(--black);
-}
-nav{
-  background: var(--grey);
 }
