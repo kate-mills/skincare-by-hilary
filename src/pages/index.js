@@ -10,7 +10,7 @@ const IndexPage = () => (
     <PageWrapper>
       <h2>Looking your best makes you feel better</h2>
     <div className="flex-container">
-      <FluidImage className="flex-item" maxWidth="400px"/>
+      <FluidImage className="flex-item" maxWidth="500px"/>
       <div className="flex-item">
         <p>Hilary offers a clinical approach to working magic on your skin.</p>
         <p>Her experience as an esthetician spans well over a decade.</p>
