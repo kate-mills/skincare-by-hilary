@@ -21,10 +21,10 @@ export default styled(Btn)`
   font-style: normal;
   font-size: 1rem;
   max-width: 75vw;
-  padding: .4rem 3rem;
+  padding: .2rem 2rem;
   text-align: center;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
   transition: var(--transition);
 
   &:hover{
@@ -38,6 +38,6 @@ export default styled(Btn)`
     font-style: normal;
     font-size: 1.2rem;
     margin: 1rem;
-    padding: .8rem 6rem;
+    padding: .4rem 2rem;
   }
 `
