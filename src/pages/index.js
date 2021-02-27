@@ -10,7 +10,7 @@ const IndexPage = () => (
     <PageWrapper>
       <h2>Looking your best makes you feel better</h2>
     <div className="flex-container">
-      <FluidImage className="flex-item" maxWidth="500px"/>
+      <FluidImage maxWidth="500px"/>
       <div className="flex-item">
         <p>Hilary offers a clinical approach to working magic on your skin.</p>
         <p>Her experience as an esthetician spans well over a decade.</p>
@@ -34,21 +34,21 @@ const PageWrapper = styled.section`
       justify-content: space-evenly;
       width: 100%;
     }
+    .fluid-img,
     .flex-item{
       margin: 0 auto;
       box-sizing: border-box;
       width: 100%;
+      max-width: 500px;
       .container-btn{
         margin: 0 auto;
       }
-    }
-    .flex-item:nth-child(1){
-      text-align: center;
     }
     @media(min-width: 768px ){
       .flex-container{
         flex-direction: row;
       }
+      .fluid-img,
       .flex-item{
         box-sizing: border-box;
         width: 45%;
