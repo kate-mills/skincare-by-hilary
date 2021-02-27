@@ -14,10 +14,10 @@ const query = graphql`
   }
 `
 const FixedImage = (props) => {
-  const {defaultImg:{childImageSharp:{fixed:defaultFixed}}} = useStaticQuery(query);
+  const {defaultImg:{childImageSharp:{fixed:defaultImg}}} = useStaticQuery(query);
   return (
-    <div className="fixed-image-container" style={{ marginBottom: props.marginBottom, }}>
-      <Img fixed={props.fixed || defaultFixed}/>
+    <div className={props.className}  style={{ marginBottom: props.marginBottom, }}>
+      <Img fixed={props.fixed || defaultImg}/>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Banner = ({ title, subtitle, children }) => {
+const Banner = ({className,  title, subtitle, children }) => {
   return (
     <BannerWrapper>
       <h1>{title}</h1>
