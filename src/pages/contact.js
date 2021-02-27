@@ -21,7 +21,7 @@ const Contact = ({ data }) => {
         </Banner>
         <div className="flexible">
           <ContactForm />
-          <iframe title="mobile-map" id="mobile-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.046439909996!2d-122.28386748445573!3d38.30159178944664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085065b831d4fd1%3A0x3dafacedbd87c495!2sOxbow%20Public%20Market!5e0!3m2!1sen!2sus!4v1614363736557!5m2!1sen!2sus" width="350" height="350" style={{border:'0'}} allowFullScreen="" loading="lazy"/>
+          <iframe title="mobile-map" id="mobile-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.046439909996!2d-122.28386748445573!3d38.30159178944664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085065b831d4fd1%3A0x3dafacedbd87c495!2sOxbow%20Public%20Market!5e0!3m2!1sen!2sus!4v1614363736557!5m2!1sen!2sus" width="80%" height="450" style={{border:'0'}} allowFullScreen="" loading="lazy" passive="true"/>
         </div>
       </PageWrapper>
     </Layout>
