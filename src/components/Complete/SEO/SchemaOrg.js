@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet"
 export default React.memo(
   ({
     url,
-    compoundTitle,
     pageTitle,
     image,
     description,
@@ -18,7 +17,7 @@ export default React.memo(
     const linkCrumbs = navigationLinks.map(link => {
       return {
         type: "ListItem",
-        name: link.page,
+        name: `${link.page} | ${organization.name}`,
         position: link.id,
         item: `${baseUrl}${link.path}`,
       }
