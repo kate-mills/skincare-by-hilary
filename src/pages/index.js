@@ -3,9 +3,12 @@ import React from "react"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import { SEO, FluidImage, Btn } from "../components/Complete"
+import img from "../images/green.jpg"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout img={img}
+    title="Skincare By Hilary"
+    subtitle="Looking your best makes you feel better">
     <SEO title="Home" />
     <PageWrapper>
       <h2>Looking your best makes you feel better</h2>

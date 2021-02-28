@@ -6,12 +6,12 @@ const Contact = () => {
     <ContactWrapper>
       <div>
         <form
+          action="/success"
           className="form"
           name="contact"
           method="post"
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           data-netlify="true"
-          action="/success/"
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -60,7 +60,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <button type="submit" className="submit">Send</button>
+            <input type="submit" className="submit" value="Send"/>
           </div>
         </form>
       </div>

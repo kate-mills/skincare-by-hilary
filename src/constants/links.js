@@ -5,17 +5,26 @@ const navigationLinks = [
   {
     page: "Home",
     path: "/",
-    id: 1,
+    links: [],
   },
   {
     page: "Treatments",
     path: "/treatments/",
-    id: 2,
+    links: [
+      {
+        page: "Facials",
+        path: "/facials/",
+      },
+      {
+        page: "Hair Removal",
+        path: "/hair-removal",
+      }
+    ],
   },
   {
     page: "Contact",
     path: "/contact/",
-    id: 3,
+    links: [],
   },
 ];
 

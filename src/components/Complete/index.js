@@ -7,6 +7,7 @@ import Banner from "./Banner"
 import {FluidImage, FixedImage } from "./Img"
 import Btn from './Btn'
 import Title from './Title'
+import {HomeHeader, PageHeader} from './BackgroundImg'
 
 export {
   SEO,
@@ -22,4 +23,5 @@ export {
   FixedImage,
   Btn,
   Title,
+  HomeHeader, PageHeader,
 }

@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 const Treatments = ({ data }) => {
   return (
-    <Layout>
+    <Layout title="Treatments">
       <SEO
         title="Treatments"
         description="Schedule Now! Skincare by Hilary's services include makeup, eyelash extensions, waxing, tinting, & facial spa treatments in Napa, CA."
@@ -16,9 +16,7 @@ const Treatments = ({ data }) => {
       />
       <SectionWrapper>
       <Banner title="Spa Treatments" subtitle="Makeup Atrtistry | Eyelash Extensions | Waxing | Tinting | Facials">
-        <div className="centered-image">
-          <FluidImage maxWidth="600px" fluid={data.seoImg.childImageSharp.fluid}/>
-        </div>
+        <div className="centered-image"> <FluidImage maxWidth="600px" fluid={data.seoImg.childImageSharp.fluid}/> </div>
       </Banner>
         <Title title="Waxing" subtitle="Services"/>
         <div className="center"><Btn to="/" text="Back to Home Page"/></div>

@@ -5,9 +5,20 @@ import { FaBars } from 'react-icons/fa'
 import {Link} from "gatsby"
 import {navigationLinks} from '../../../constants/links'
 import {PhoneNumber} from '../ContactInfo'
+import {useGlobalContext} from '../../../context/context'
+import NavSubmenu from './Submenu'
 
 
 const Nav = ({toggleSidebar}) => {
+  const { openSubmenu } = useGlobalContext()
+  const displaySubmenu = (e)=>{
+    const page_name = e.target.textContent;           // I get this text
+    const tempBtn = e.target.getBoundingClientRect(); // I get object with coordinates
+    const center = (tempBtn.left + tempBtn.right)/2; // center of anilink
+    const bottom = (tempBtn.bottom - 3);             // bottom of anilink - 3px
+    openSubmenu(page_name, {center, bottom});
+  };
+
   return (
     <NavContainer>
       <div className="nav-center">
@@ -18,12 +29,15 @@ const Nav = ({toggleSidebar}) => {
           <button type="button" aria-label="Open sidebar" className="nav-opener" onClick={toggleSidebar}>
             <FaBars />
           </button>
+            <NavSubmenu/>
         </div>
         <ul className="nav-links">
-          {navigationLinks.map(link => {
+          {navigationLinks.map((link, index) => {
             return (
-              <li key={link.id}>
-                <Link to={link.path}>{link.page}</Link>
+              <li key={index}>
+                <Link to={link.path}
+                  onMouseOver={displaySubmenu}
+                >{link.page}</Link>
               </li>
             )
           })}
