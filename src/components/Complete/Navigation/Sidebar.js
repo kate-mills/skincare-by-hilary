@@ -5,6 +5,7 @@ import { FaTimes } from 'react-icons/fa'
 import {Link} from "gatsby"
 import {navigationLinks} from '../../../constants/links'
 import {PhoneNumber} from '../ContactInfo'
+import SidebarSubLinks from './SidebarSublinks'
 
 const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
   return (
@@ -21,12 +22,16 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
         <ul className="links">
           {navigationLinks.map((link, index) => {
             return (
+              <>
               <li key={index}>
                 {' '}
                 <Link to={link.path} onClick={toggleSidebar}>
                   {link.page}
                 </Link>
               </li>
+                <SidebarSubLinks links={link.links}/>
+              </>
+
             )
           })}
           <li className="tel-wrapper">
