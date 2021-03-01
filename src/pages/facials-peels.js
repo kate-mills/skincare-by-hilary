@@ -1,11 +1,11 @@
 import React from "react"
-import {graphql} from "gatsby"
+import {graphql, Link} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import { SEO, Btn, PageHeader } from "../components/Complete"
 
-const IndexPage = (props) => {
+const FacialsPeels = (props) => {
   const {data:{allAirtable:{nodes}}} = props
   return(
   <Layout img={props.data.seoImg.childImageSharp.fluid.src}
@@ -24,7 +24,7 @@ const IndexPage = (props) => {
           return(
             <div key={index}>
               <h3>
-                {treatment.name} 
+                <Link to="/contact" state={treatment}> {treatment.name} </Link>
                 <span className="price"> {treatment.priceRange || `$${treatment.price}`} </span>
                 <span className="time">{treatment.time}</span>
               </h3>
@@ -112,4 +112,4 @@ const PageWrapper = styled.section`
     }
   }
 `
-export default IndexPage
+export default FacialsPeels
