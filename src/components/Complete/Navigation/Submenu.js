@@ -28,9 +28,11 @@ const Submenu = () => {
           {links.map((link, index) => {
             const {path , page } = link
             return (
-              <Link key={index} to={path} className={`sublink`}
-                onClick={closeSubmenu}
-              >
+              <Link
+                key={index}
+                to={path}
+                className={`sublink`}
+                onClick={closeSubmenu}>
                 {page}
               </Link>
             )

@@ -22,15 +22,13 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
         <ul className="links">
           {navigationLinks.map((link, index) => {
             return (
-              <>
               <li key={index}>
                 {' '}
                 <Link to={link.path} onClick={toggleSidebar}>
                   {link.page}
                 </Link>
-              </li>
                 <SidebarSubLinks links={link.links}/>
-              </>
+              </li>
 
             )
           })}
