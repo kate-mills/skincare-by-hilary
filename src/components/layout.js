@@ -1,10 +1,12 @@
 import React from "react"
 
-import { Navbar, Sidebar, Footer, HomeHeader, PageHeader } from "./Complete"
+import { Navbar, Sidebar, Footer } from "./Complete"
+import { useGlobalContext } from '../context/context'
 import "./layout.css"
 
 
 const Layout = (props) => {
+  const {closeSubmenu} = useGlobalContext()
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
 
   const toggleSidebar = () => {
@@ -15,31 +17,8 @@ const Layout = (props) => {
     <>
       <Navbar  isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      {
-         (!!props.large) ?
-          ( <HomeHeader img={props.img} >
-              <h1 style={{
-                color: 'white',
-                fontSize: '5rem',
-                fontFamily: 'cursive',
-              }}>{props.title}</h1>
-
-          </HomeHeader>
-          )
-          :
-          (
-            <PageHeader img={props.img}>
-              <h1 style={{
-                textAlign: 'center',
-                color: 'white',
-                fontSize: '5rem',
-                fontFamily: 'cursive',
-              }}>{props.title}</h1>
-            </PageHeader>
-          )
-      }
-
-      <div style={{margin:`1rem auto`,maxWidth:960,padding:`0 1.0875rem 1.45rem`,}}>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+      <div onFocus={closeSubmenu} style={{margin:`0 auto`,maxWidth:960,padding:`1rem 1.0875rem 1.45rem`,}} onMouseOver={closeSubmenu}>
         <main>{props.children}</main>
       </div>
         <Footer/>

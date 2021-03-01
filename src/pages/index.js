@@ -3,15 +3,13 @@ import React from "react"
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import { SEO, FluidImage, Btn } from "../components/Complete"
-import img from "../images/green.jpg"
 
 const IndexPage = () => (
-  <Layout img={img}
-    title="Skincare By Hilary"
+  <Layout
     subtitle="Looking your best makes you feel better">
     <SEO title="Home" />
     <PageWrapper>
-      <h2>Looking your best makes you feel better</h2>
+    <h2>Looking your best makes you feel better</h2>
     <div className="flex-container">
       <FluidImage maxWidth="500px"/>
       <div className="flex-item">
@@ -37,7 +35,16 @@ const PageWrapper = styled.section`
       justify-content: space-evenly;
       width: 100%;
     }
-    .fluid-img,
+    h2 {
+      box-sizing: border-box;
+      margin: 1.4rem auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .fluid-img{
+      display: none;
+    }
     .flex-item{
       margin: 0 auto;
       box-sizing: border-box;
@@ -50,6 +57,9 @@ const PageWrapper = styled.section`
     @media(min-width: 768px ){
       .flex-container{
         flex-direction: row;
+        .fluid-img{
+          display: unset;
+        }
       }
       .fluid-img,
       .flex-item{

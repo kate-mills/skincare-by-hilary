@@ -12,8 +12,8 @@ const navigationLinks = [
     path: "/treatments/",
     links: [
       {
-        page: "Facials",
-        path: "/facials/",
+        page: "Facials & Peels",
+        path: "/facials-peels/",
       },
       {
         page: "Hair Removal",

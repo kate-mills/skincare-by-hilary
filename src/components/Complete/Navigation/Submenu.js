@@ -49,6 +49,7 @@ const SubmenuWrapper = styled.aside`
     padding: 0 1rem;
     position: absolute;
     transform: translateX(-50%) translateY(3%);
+    z-index: 1;
   }
   &.submenu.hide { display: none; }
   &.submenu.show { display: unset; }

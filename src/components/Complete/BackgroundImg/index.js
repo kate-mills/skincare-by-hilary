@@ -1,16 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import defaultImg from "../../../images/bcg/hilary-facials-and-peels.jpg"
-import { useGlobalContext } from '../../../context/context'
+import defaultImg from "../../../images/hil-head3.jpeg"
 
 function HomeHeader({ img, children }) {
-  const {closeSubmenu} = useGlobalContext()
-  return <IndexHeader img={img} onMouseOver={closeSubmenu} >{children}</IndexHeader>
+  return <IndexHeader img={img}>{children}</IndexHeader>
 }
-
 function PageHeader({ img, children }) {
-  const {closeSubmenu} = useGlobalContext()
-  return <DefaultHeader img={img} onMouseOver={closeSubmenu}>{children}</DefaultHeader>
+  return <DefaultHeader img={img}>{children}</DefaultHeader>
 }
 
 const IndexHeader = styled.header`
