@@ -5,7 +5,7 @@ import { FaTimes } from 'react-icons/fa'
 import {Link} from "gatsby"
 import {navigationLinks} from '../../../constants/links'
 import {PhoneNumber} from '../ContactInfo'
-import SidebarSubLinks from './SidebarSublinks'
+import SidebarSubLinks from './SidebarSubLinks'
 
 const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
   return (
