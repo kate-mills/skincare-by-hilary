@@ -22,8 +22,8 @@ const navigationLinks = [
     ],
   },
   {
-    page: "Contact",
-    path: "/contact/",
+    page: "Schedule",
+    path: "/schedule/",
     links: [],
   },
 ];

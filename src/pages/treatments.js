@@ -16,7 +16,7 @@ const Treatments = (props) => {
           <p>Her experience as an esthetician spans well over a decade.</p>
           <p>Having worked in both plastic surgery and dermatology she is able to offer you a thorough skin analysis, as well as a broad range of treatment options, perfectly suited to your needs. </p>
           <p>This, combined with her nurturing and intuitive touch, allows her to provide facial treatments that will bring new life to your skin!</p>
-         <Btn className="container-btn" to="/contact" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" hoverColor="var(--primaryColor)" hoverBackground="var(--primaryDark)" />
+         <Btn className="container-btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" hoverColor="var(--primaryColor)" hoverBackground="var(--primaryDark)" />
         </div>
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
       </div>

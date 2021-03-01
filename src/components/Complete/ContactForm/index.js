@@ -1,7 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Contact = () => {
+const Contact = ({treatment}) => {
+  console.log('form', treatment)
+  const refTreatment = React.useRef(null)
+  const refTime = React.useRef(null)
+  const refName = React.useRef(null)
+
+  React.useEffect(()=>{
+    if (treatment.name){
+      refTime.current.value = treatment.time ? treatment.time : "30 - 60 min"
+      refTreatment.current.value =  treatment.name ? treatment.name : ""
+    } 
+    refName.current.focus()
+  })
   return (
     <ContactWrapper>
       <div>
@@ -15,9 +27,37 @@ const Contact = () => {
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
+          {
+            treatment.name &&  (
+              <>
+                <div>
+                  <input
+                    ref={refTreatment}
+                    type="text"
+                    aria-label="Treatment"
+                    name="treatment"
+                    id="treatment"
+                    className="form-control"
+                    placeholder="What would you like to schedule?"
+                  />
+                </div>
+                <div>
+                  <input
+                    ref={refTime}
+                    type="text"
+                    aria-label="Time"
+                    name="time"
+                    id="time"
+                    className="form-control"
+                    placeholder="Time"
+                  />
+                </div>
+              </>
+            )
+          }
           <div>
             <input
-              ref={input => input && input.focus()}
+              ref={refName}
               aria-label="Name"
               type="text"
               name="name"
@@ -27,18 +67,6 @@ const Contact = () => {
               required
             />
           </div>
-          <div>
-            <input
-              aria-label="Email"
-              type="email"
-              name="email"
-              id="email"
-              className="form-control"
-              placeholder="Email *"
-              required
-            />
-          </div>
-          <div>
           <div>
               <input
                 aria-label="Phone"
@@ -50,14 +78,23 @@ const Contact = () => {
                 required
               />
           </div>
+          <div>
             <textarea
               aria-label="Message"
               name="message"
               id="message"
               rows="5"
               className="form-control"
-              placeholder="Message *"
+              placeholder="Scheduling Message"
             />
+          </div>
+          <div className="radio">
+            <div>
+              <label for="tex">Text me!<input type="radio" name="textorcall" id="textme" value="textme" checked/></label>
+            </div>
+            <div>
+              <label for="callme">Call me!<input type="radio" name="textorcall" id="callme" value="callme"/></label>
+            </div>
           </div>
           <div>
             <input type="submit" className="submit" value="Send"/>
@@ -94,8 +131,18 @@ const ContactWrapper = styled.section`
       padding: 0.65rem 0.75rem;
       width: 100% !important;
     }
+    .radio{
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .radio > div{
+      margin-bottom: 1rem;
+    }
     input,
     textarea{
+      display: inline;
       width: 100% !important;
     }
     input:focus,

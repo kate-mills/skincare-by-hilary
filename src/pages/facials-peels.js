@@ -18,13 +18,13 @@ const FacialsPeels = (props) => {
       <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
         <span className="head-span">Facials, Peels, & Accoutrements</span>
       </PageHeader>
-      <Btn className="btn" to="/contact" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" />
+      <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" />
       <p className="category">Facials & Peels</p>
         { nodes.map(({data:treatment}, index)=> {
           return(
             <div key={index}>
               <h3>
-                <Link to="/contact" state={treatment}> {treatment.name} </Link>
+                <Link to="/schedule" state={treatment}> {treatment.name} </Link>
                 <span className="price"> {treatment.priceRange || `$${treatment.price}`} </span>
                 <span className="time">{treatment.time}</span>
               </h3>
@@ -33,7 +33,7 @@ const FacialsPeels = (props) => {
             )
           })
         }
-      <Btn className="btn" to="/contact" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
   </Layout>
   )

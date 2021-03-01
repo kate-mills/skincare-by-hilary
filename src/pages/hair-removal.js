@@ -15,10 +15,10 @@ const IndexPage = (props) => {
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <PageHeader>
+      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
         <span className="head-span">Facials, Peels, & Accoutrements</span>
       </PageHeader>
-      <Btn className="btn" to="/contact" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" />
+      <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" />
       <p className="category">Facials & Peels</p>
         { nodes.map(({data:treatment}, index)=> {
           return(
@@ -33,7 +33,7 @@ const IndexPage = (props) => {
             )
           })
         }
-      <Btn className="btn" to="/contact" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
   </Layout>
   )
