@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const siteUrl = `https://skincare-by-hilary.netlify.app` // change to .com url
 const netlifyUrl = `https://skincare-by-hilary.netlify.app`
 const companyName = `Skincare By Hilary`
@@ -82,6 +86,19 @@ module.exports = {
         sitemap: `${siteUrl}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.GATSBY_AIRTABLE_API_KEY, 
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.GATSBY_AIRTABLE_SEO_BUSINESS_BASE_ID,
+            tableName: `Treatments`,
+          },
+        ]
+      }
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
