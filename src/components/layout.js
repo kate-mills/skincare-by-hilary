@@ -2,7 +2,6 @@ import React from "react"
 
 import { Navbar, Sidebar, Footer } from "./Complete"
 import { useGlobalContext } from '../context/context'
-import "./layout.css"
 
 
 const Layout = (props) => {
