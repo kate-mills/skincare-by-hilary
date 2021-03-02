@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 
-const Btn = ({to, text, color, className}) => {
-  return <Link to={to} className={`${className}`}>{text}</Link>
+const Btn = ({to, text, color, className, state}) => {
+  return <Link to={to} state={state}className={`${className}`}>{text}</Link>
 }
 
 export default styled(Btn)`
