@@ -99,9 +99,7 @@ export const query = graphql`
         }
       }
     }
-
-
-    seoImg:file(relativePath: { eq: "hil-head4.jpeg" }) {
+    seoImg:file(relativePath: { eq: "bcg/hilary-hair-removal.jpg" }) {
       childImageSharp {
         fluid {
           src
