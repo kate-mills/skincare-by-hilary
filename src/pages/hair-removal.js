@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql, Link} from "gatsby"
+import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
@@ -10,8 +10,7 @@ const FacialsPeels = (props) => {
   const {data:{extras}} = props
   return(
   <Layout img={props.data.seoImg.childImageSharp.fluid.src}
-    title="Waxing & Lash Extensions in Napa, CA."
-    subtitle="Looking your best makes you feel better">
+    subtitle="Looking your best makes you feel better | ">
     <SEO title="Waxing & Lash Extensions in Napa, CA" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about hair removal & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
