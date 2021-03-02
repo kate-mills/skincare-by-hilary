@@ -8,6 +8,7 @@ import {FluidImage, FixedImage } from "./Img"
 import Btn from './Btn'
 import Title from './Title'
 import {HomeHeader, PageHeader} from './BackgroundImg'
+import ServiceItems from "./ServiceItems"
 
 export {
   SEO,
@@ -24,4 +25,5 @@ export {
   Btn,
   Title,
   HomeHeader, PageHeader,
+  ServiceItems,
 }

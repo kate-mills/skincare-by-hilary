@@ -3,7 +3,7 @@ import {graphql, Link} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, PageHeader } from "../components/Complete"
+import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
 
 const FacialsPeels = (props) => {
   const {data:{hr}} = props
@@ -12,7 +12,7 @@ const FacialsPeels = (props) => {
   <Layout img={props.data.seoImg.childImageSharp.fluid.src}
     title="Waxing & Lash Extensions in Napa, CA."
     subtitle="Looking your best makes you feel better">
-    <SEO title="Waxing & Lash Extensions in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
+    <SEO title="Waxing & Lash Extensions in Napa, CA" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about hair removal & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
@@ -22,48 +22,8 @@ const FacialsPeels = (props) => {
       <p className="click-to-schedule">Click a service below to get scheduled with Hilary.</p>
 
       <section className="menu-box">
-        <div className="hr service-menu">
-      <p className="category">Waxing, Sprucing, & Shaping</p>
-          { hr.nodes.map(({data:treatment}, index)=> {
-            return(
-              <div key={index}>
-                <Link to="/schedule" state={{
-                  name: treatment.name,
-                  time: treatment.time,
-                  warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."
-                 }}>
-                  <h3 className="menu-item">
-                    {treatment.name}
-                    <span className="price">{treatment.priceRange || ` $ ${treatment.price} `} </span>
-                  </h3>
-                  <p className="desc">{treatment.description}</p>
-                </Link>
-              </div>
-              )
-            })
-          }
-        <p className="warning">*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users.</p>
-
-        </div>
-
-        <div className="extras service-menu">
-          <p className="category">Extras</p>
-
-          { extras.nodes.map(({data:treatment}, index)=> {
-            return(
-              <div key={index}>
-                <Link to="/schedule" state={treatment}>
-                  <h3 className="menu-item">
-                    {treatment.name}
-                    <span className="price">{treatment.priceRange || ` $ ${treatment.price} `} </span>
-                  </h3>
-                  <p className="desc">{treatment.description}</p>
-                </Link>
-              </div>
-              )
-            })
-          }
-        </div>
+        <ServiceItems category="Waxing & Sprucing" items={hr} warning="*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users." />
+        <ServiceItems category="Extras" items={extras} />
       </section>
       <Btn className="btn" to="/schedule" state={{name: "Waxing, Sprucing, & Shaping", time: "30 min", warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."}} text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
@@ -124,14 +84,6 @@ const PageWrapper = styled.section`
       display: block;
       width: fit-content;
     }
-    .category{
-      margin: 1.45rem auto;
-      background: #7dc27233;
-      color: var(--black);
-      font-weight: 500;
-      width: fit-content;
-      padding: 0 0.4rem;
-    }
     .click-to-schedule {
       margin-top: 1rem;
       text-align: center;
@@ -149,14 +101,6 @@ const PageWrapper = styled.section`
     .extras {
       max-width: 350px;
     }
-    .menu-item{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .price{
-        margin-left: 20px;
-      }
-    }
     h3{
       font-size: 1.1rem;
       line-height: 1rem;
@@ -168,11 +112,6 @@ const PageWrapper = styled.section`
         line-height: 0.7rem;
         margin-left: 0.4rem;
       }
-    }
-    .warning{
-      font-size: .75rem;
-      max-width: 300px;
-      text-align: justify;
     }
   }
 `
