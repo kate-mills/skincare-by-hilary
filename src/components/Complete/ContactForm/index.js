@@ -5,18 +5,18 @@ const Contact = ({treatment}) => {
   const txName = treatment?.name || ""
   const txTime = treatment?.time || ""
 
-  const refTreatment = React.useRef(null)
+  const refMessage = React.useRef(null)
   const refName = React.useRef(null)
 
   React.useEffect(()=>{
     if (txName && txTime){
-      refTreatment.current.value =  `${txName}  ${txTime}`
+      refMessage.current.value =  `I want a (${txTime})  ${txName}.\n`
     } 
     else{
-      refTreatment.current.value =  ``
+      refMessage.current.value =  ``
     }
     refName.current.focus()
-  }, [refTreatment, txName, txTime])
+  }, [refMessage, txName, txTime])
   return (
     <ContactWrapper>
       <div>
@@ -30,16 +30,6 @@ const Contact = ({treatment}) => {
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
-          <div>
-            <input
-              ref={refTreatment}
-              aria-label="Treatment"
-              name="treatment"
-              id="treatment"
-              className="form-control treatment"
-              placeholder="What would you like to schedule?"
-              onChange={()=>console.log(refTreatment.current.value)}/>
-          </div>
           <div>
             <input
               ref={refName}
@@ -63,6 +53,7 @@ const Contact = ({treatment}) => {
           </div>
           <div>
             <textarea
+              ref={refMessage}
               aria-label="Message"
               name="message"
               id="message"
@@ -103,7 +94,7 @@ const ContactWrapper = styled.section`
       width: 100%;
     }
     .treatment{
-      border-color: #CDDC39;
+      border-color: gainsboro;
     }
     .submit {
       background-color: var(--black);
