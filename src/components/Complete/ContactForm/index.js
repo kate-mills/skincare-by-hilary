@@ -18,6 +18,8 @@ const Contact = ({treatment}) => {
     <ContactWrapper>
       <div>
         <form
+          action="/success"
+          method="post"
           className="form"
           name="contact"
           data-netlify-honeypot="bot-field"
