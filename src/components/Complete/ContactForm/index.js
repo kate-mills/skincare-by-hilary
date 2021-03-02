@@ -18,10 +18,8 @@ const Contact = ({treatment}) => {
     <ContactWrapper>
       <div>
         <form
-          action="/success"
           className="form"
           name="contact"
-          method="post"
           data-netlify-honeypot="bot-field"
           data-netlify="true"
         >
@@ -33,12 +31,12 @@ const Contact = ({treatment}) => {
                 <div>
                   <input
                     ref={refTreatment}
-                    type="text"
                     aria-label="Treatment"
                     name="treatment"
                     id="treatment"
                     className="form-control treatment"
                     placeholder="What would you like to schedule?"
+                    onChange={()=>console.log('change', refTreatment, refTreatment.current.value)}
                   />
                 </div>
               </>
@@ -79,14 +77,14 @@ const Contact = ({treatment}) => {
           </div>
           <div className="radio">
             <div>
-              <label htmlFor="textme"> Text me back!</label><input type="radio" name="textorcall" id="textme" value="textme" defaultChecked />
+              <label htmlFor="textorcall">Text me back!</label><input type="radio" name="textorcall" id="textme" value="textme" defaultChecked />
             </div>
             <div>
-              <label htmlFor="callme">Call me back!</label><input type="radio" name="textorcall" id="callme" value="callme"/>
+              <label htmlFor="textorcall">Call me back!</label><input type="radio" name="textorcall" id="callme" value="callme"/>
             </div>
           </div>
           <div>
-            <input type="submit" className="submit" value="Send"/>
+            <input type="submit" className="submit" value="Send" />
           </div>
         </form>
       </div>
