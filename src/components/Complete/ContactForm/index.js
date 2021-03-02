@@ -2,16 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Contact = ({treatment}) => {
-  console.log('form', treatment)
+  const txName = treatment?.name || ""
+  const txTime = treatment?.time || ""
+
   const refTreatment = React.useRef(null)
   const refTime = React.useRef(null)
   const refName = React.useRef(null)
+  const refMessage = React.useRef(null)
 
   React.useEffect(()=>{
-    if (treatment.name){
-      refTime.current.value = treatment.time ? treatment.time : "30 - 60 min"
-      refTreatment.current.value =  treatment.name ? treatment.name : ""
-    } 
+    if (txName && txTime){
+      refTime.current.value = txTime
+      refTreatment.current.value =  txName
+      refMessage.current.value = 'Book me for a ' + txTime + " " + txName + '.'
+    } else{
+      refMessage.current.value = ''
+    }
     refName.current.focus()
   })
   return (
@@ -80,6 +86,7 @@ const Contact = ({treatment}) => {
           </div>
           <div>
             <textarea
+              ref={refMessage}
               aria-label="Message"
               name="message"
               id="message"
@@ -90,10 +97,10 @@ const Contact = ({treatment}) => {
           </div>
           <div className="radio">
             <div>
-              <label for="tex">Text me!<input type="radio" name="textorcall" id="textme" value="textme" checked/></label>
+              <label htmlFor="textme"> Text me back!</label><input type="radio" name="textorcall" id="textme" value="textme" defaultChecked />
             </div>
             <div>
-              <label for="callme">Call me!<input type="radio" name="textorcall" id="callme" value="callme"/></label>
+              <label htmlFor="callme">Call me back!</label><input type="radio" name="textorcall" id="callme" value="callme"/>
             </div>
           </div>
           <div>
