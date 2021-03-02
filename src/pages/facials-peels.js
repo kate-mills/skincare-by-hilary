@@ -1,40 +1,29 @@
 import React from "react"
-import {graphql, Link} from "gatsby"
+import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, PageHeader } from "../components/Complete"
+import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
 
 const FacialsPeels = (props) => {
-  const {data:{allAirtable:{nodes}}} = props
   return(
-  <Layout img={props.data.seoImg.childImageSharp.fluid.src}
-    title="Facials & Peels"
-    subtitle="Looking your best makes you feel better">
-    <SEO title="Facials, Peels, & Accoutrements in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
+  <Layout>
+    <SEO title="Facials, Peels, & Accoutrements in Napa, CA |" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
       <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
+
         <span className="head-span">Facials, Peels, & Accoutrements</span>
       </PageHeader>
-      <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" />
-      <p className="category">Facials & Peels</p>
-        { nodes.map(({data:treatment}, index)=> {
-          return(
-            <div key={index}>
-              <Link to="/schedule" state={treatment}>
-              <h3>
-                 {treatment.name}
-                <span className="price"> {treatment.priceRange || `$${treatment.price}`} </span>
-                <span className="time">{treatment.time}</span>
-              </h3>
-              <p className="desc">{treatment.description}</p>
-                </Link>
-            </div>
-            )
-          })
-        }
+
+      <p className="click-to-schedule">Click on a service below to get scheduled now.</p>
+
+      <section className="menu-box">
+        <ServiceItems items={props.data.fp} category="Facials & Peels" />
+        <ServiceItems items={props.data.extras} category="Extras" mini
+        className="extras"/>
+      </section>
       <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
   </Layout>
@@ -43,7 +32,7 @@ const FacialsPeels = (props) => {
 
 export const query = graphql`
   {
-    allAirtable(filter: {data: {category: {eq: "facials-peels"}}}, sort: {fields: data___name}) {
+    fp:allAirtable(filter: {data: {category: {eq: "facials-peels"}}}, sort: {fields: data___name}) {
       nodes {
         data {
           name
@@ -56,6 +45,20 @@ export const query = graphql`
         }
       }
     }
+    extras:allAirtable(filter: {data: {category: {eq: "extras"}}}, sort: {fields: data___name}) {
+      nodes {
+        data {
+          name
+          description
+          price
+          category
+          time
+          hasPriceRange
+          priceRange
+        }
+      }
+    }
+
     seoImg:file(relativePath: { eq: "hil-head4.jpeg" }) {
       childImageSharp {
         fluid {
@@ -68,49 +71,39 @@ export const query = graphql`
 `
 const PageWrapper = styled.section`
   & {
+    .menu-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > :nth-child(1){
+        max-width: unset;
+      }
+    }
     .head-span{
-      font-size: 2.5rem;
       color: white;
       display: block;
-      width: 100%;
-      text-align: center;
+      font-size: 2.5rem;
       line-height: 2.5rem;
+      text-align: center;
+      width: 100%;
     }
     .btn{
-      margin: 1rem auto 2rem;
       display: block;
+      margin: 1rem auto 2rem;
       width: fit-content;
     }
-    .category{
-      background: #7dc27233;
-      color: var(--black);
-      font-weight: 500;
-      width: fit-content;
-      padding: 0 0.4rem;
+    .click-to-schedule {
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-top: 1rem;
+      text-align: center;
     }
-    h3{
-      font-size: 1.1rem;
-      line-height: 1rem;
-      margin-bottom: 0.2rem;
-      .price{
-        font-size: 0.85rem;
-        font-style: italic;
-        font-weight: 600;
-        line-height: 0.7rem;
-        margin-left: 0.4rem;
+    @media(min-width:768px){
+      .menu-box{
+        >:nth-child(1){
+          max-width: 60%;
+        }
       }
-      .time{
-        color: forestgreen;
-        font-size: 0.85rem;
-        margin-left: 0.4rem;
-      }
-    }
-    .desc{
-      background: #cccccc38;
-      font-size: 0.8rem;
-      margin: 0 auto 1.5rem;
-      padding: 0 0.5rem;
-      text-align: justify;
     }
   }
 `

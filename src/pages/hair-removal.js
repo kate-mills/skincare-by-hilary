@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
 
-const FacialsPeels = (props) => {
+const HairRemoval = (props) => {
   const {data:{hr}} = props
   const {data:{extras}} = props
   return(
@@ -19,10 +19,9 @@ const FacialsPeels = (props) => {
         <span className="head-span">Hair Removal & Lash Extensions</span>
       </PageHeader>
       <p className="click-to-schedule">Click a service below to get scheduled with Hilary.</p>
-
       <section className="menu-box">
-        <ServiceItems category="Waxing & Sprucing" items={hr} warning="*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users." />
-        <ServiceItems category="Extras" items={extras} />
+        <ServiceItems category="Waxing & Sprucing" items={hr} warning="*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users." mini />
+        <ServiceItems category="Extras" items={extras} mini/>
       </section>
       <Btn className="btn" to="/schedule" state={{name: "Waxing, Sprucing, & Shaping", time: "30 min", warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."}} text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
@@ -68,50 +67,32 @@ export const query = graphql`
     }
   }
 `
+
 const PageWrapper = styled.section`
-  & {
+    .menu-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     .head-span{
-      font-size: 2.5rem;
       color: white;
       display: block;
-      width: 100%;
-      text-align: center;
+      font-size: 2.5rem;
       line-height: 2.5rem;
+      text-align: center;
+      width: 100%;
     }
     .btn{
-      margin: 1rem auto 2rem;
       display: block;
+      margin: 1rem auto 2rem;
       width: fit-content;
     }
     .click-to-schedule {
-      margin-top: 1rem;
-      text-align: center;
       font-size: 0.9rem;
       font-style: italic;
-    }
-    .menu-box{
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .hr {
-      max-width: 370px;
-    }
-    .extras {
-      max-width: 350px;
-    }
-    h3{
-      font-size: 1.1rem;
-      line-height: 1rem;
-      margin-bottom: 0.2rem;
-      .price{
-        font-size: 0.85rem;
-        font-style: italic;
-        font-weight: 600;
-        line-height: 0.7rem;
-        margin-left: 0.4rem;
-      }
+      margin-top: 1rem;
+      text-align: center;
     }
   }
 `
-export default FacialsPeels
+export default HairRemoval
