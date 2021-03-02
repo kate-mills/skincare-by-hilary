@@ -23,12 +23,14 @@ const FacialsPeels = (props) => {
         { nodes.map(({data:treatment}, index)=> {
           return(
             <div key={index}>
+              <Link to="/schedule" state={treatment}>
               <h3>
-                <Link to="/schedule" state={treatment}> {treatment.name} </Link>
+                 {treatment.name}
                 <span className="price"> {treatment.priceRange || `$${treatment.price}`} </span>
                 <span className="time">{treatment.time}</span>
               </h3>
               <p className="desc">{treatment.description}</p>
+                </Link>
             </div>
             )
           })

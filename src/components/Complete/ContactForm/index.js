@@ -11,15 +11,18 @@ const Contact = ({treatment}) => {
   React.useEffect(()=>{
     if (txName && txTime){
       refTreatment.current.value =  `${txName}  ${txTime}`
+    } 
+    else{
+      refTreatment.current.value =  ``
     }
     refName.current.focus()
-  })
+  }, [refTreatment, txName, txTime])
   return (
     <ContactWrapper>
       <div>
         <form
-          action="/success"
-          method="post"
+          action="/success/"
+          method="POST"
           className="form"
           name="contact"
           data-netlify-honeypot="bot-field"
@@ -27,23 +30,16 @@ const Contact = ({treatment}) => {
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
-          {
-            ( txName && txTime ) &&  (
-              <>
-                <div>
-                  <input
-                    ref={refTreatment}
-                    aria-label="Treatment"
-                    name="treatment"
-                    id="treatment"
-                    className="form-control treatment"
-                    placeholder="What would you like to schedule?"
-                    onChange={()=>console.log('change', refTreatment, refTreatment.current.value)}
-                  />
-                </div>
-              </>
-            )
-          }
+          <div>
+            <input
+              ref={refTreatment}
+              aria-label="Treatment"
+              name="treatment"
+              id="treatment"
+              className="form-control treatment"
+              placeholder="What would you like to schedule?"
+              onChange={()=>console.log(refTreatment.current.value)}/>
+          </div>
           <div>
             <input
               ref={refName}
@@ -53,19 +49,17 @@ const Contact = ({treatment}) => {
               id="name"
               className="form-control"
               placeholder="Name *"
-              required
-            />
+              required/>
           </div>
           <div>
-              <input
-                aria-label="Phone"
-                type="tel"
-                name="phone"
-                id="phone"
-                className="form-control"
-                placeholder="Phone *"
-                required
-              />
+            <input
+              aria-label="Phone"
+              type="tel"
+              name="phone"
+              id="phone"
+              className="form-control"
+              placeholder="Phone *"
+              required/>
           </div>
           <div>
             <textarea
@@ -74,19 +68,18 @@ const Contact = ({treatment}) => {
               id="message"
               rows="5"
               className="form-control"
-              placeholder="Scheduling Message"
-            />
+              placeholder="Scheduling Message"/>
           </div>
           <div className="radio">
             <div>
-              <label htmlFor="textorcall">Text me back!</label><input type="radio" name="textorcall" id="textme" value="textme" defaultChecked />
+              <label htmlFor="textorcall">Text me back!</label><input type="radio" name="textorcall" id="textme" value="Text Me!" defaultChecked/>
             </div>
             <div>
-              <label htmlFor="textorcall">Call me back!</label><input type="radio" name="textorcall" id="callme" value="callme"/>
+              <label htmlFor="textorcall">Call me back!</label><input type="radio" name="textorcall" id="callme" value="Call Me!"/>
             </div>
           </div>
           <div>
-            <input type="submit" className="submit" value="Send" />
+            <input type="submit" className="submit" value="Send"/>
           </div>
         </form>
       </div>
