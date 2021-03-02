@@ -6,17 +6,11 @@ const Contact = ({treatment}) => {
   const txTime = treatment?.time || ""
 
   const refTreatment = React.useRef(null)
-  const refTime = React.useRef(null)
   const refName = React.useRef(null)
-  const refMessage = React.useRef(null)
 
   React.useEffect(()=>{
     if (txName && txTime){
-      refTime.current.value = txTime
-      refTreatment.current.value =  txName
-      refMessage.current.value = 'Book me for a ' + txTime + " " + txName + '.'
-    } else{
-      refMessage.current.value = ''
+      refTreatment.current.value =  `${txName}  ${txTime}`
     }
     refName.current.focus()
   })
@@ -34,7 +28,7 @@ const Contact = ({treatment}) => {
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           {
-            treatment.name &&  (
+            ( txName && txTime ) &&  (
               <>
                 <div>
                   <input
@@ -43,19 +37,8 @@ const Contact = ({treatment}) => {
                     aria-label="Treatment"
                     name="treatment"
                     id="treatment"
-                    className="form-control"
+                    className="form-control treatment"
                     placeholder="What would you like to schedule?"
-                  />
-                </div>
-                <div>
-                  <input
-                    ref={refTime}
-                    type="text"
-                    aria-label="Time"
-                    name="time"
-                    id="time"
-                    className="form-control"
-                    placeholder="Time"
                   />
                 </div>
               </>
@@ -86,7 +69,6 @@ const Contact = ({treatment}) => {
           </div>
           <div>
             <textarea
-              ref={refMessage}
               aria-label="Message"
               name="message"
               id="message"
@@ -126,6 +108,9 @@ const ContactWrapper = styled.section`
       margin-bottom: 1rem;
       padding: 0.375rem 0.75rem;
       width: 100%;
+    }
+    .treatment{
+      border-color: #CDDC39;
     }
     .submit {
       background-color: var(--black);
