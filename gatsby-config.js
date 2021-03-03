@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const siteUrl = `https://skincare-by-hilary.netlify.app` // change to .com url
+const siteUrl = `https://skincarebyhilary.app` // change to .com url
 const netlifyUrl = `https://skincare-by-hilary.netlify.app`
 const companyName = `Skincare By Hilary`
 const description = `${companyName} - Schedule Now! Hilary's treatments include makeup, eyelash extensions, waxing, tinting, & facial spa treatments in Napa, CA.`
