@@ -20,7 +20,7 @@ const Home = (props) => {
           </ul>
         </div>
         <div className="flex-item">
-          <h2>A Clinical Approach<span className="underline"/></h2>
+          <h2>About Hilary<span className="underline"/></h2>
           <p>Hilary offers a clinical approach to working magic on your skin.</p>
           <p>Her experience as an esthetician spans well over a decade.</p>
           <p>Having worked in both plastic surgery and dermatology she is able to offer you a thorough skin analysis, as well as a broad range of treatment options, perfectly suited to your needs. </p>

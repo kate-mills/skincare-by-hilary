@@ -15,13 +15,19 @@ const Makeup = (props) => {
       description="Learn about makeup, lash extension, & facial rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
-        <span className="head-span">Makeup & Lash Extensions</span>
+      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src} position="40% 50%">
+        <span className="head-span">Makeup Services</span>
       </PageHeader>
-      <p className="click-to-schedule">Click a service below to get scheduled now.</p>
-        <ServiceItems category="Makeup (in Studio)" items={inStudio} />
-        <ServiceItems category="Makeup (on Location)" items={onLocation}/>
-      <Btn className="btn" to="/schedule" state={{name: "Waxing, Sprucing, & Shaping", time: "30 min", warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."}} text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
+      <p className="click-to-schedule">Click on a makeup service below to start scheduling your service now.</p>
+      <div className="menu-box">
+        <ServiceItems category="In Studio" items={inStudio} />
+        <ServiceItems category="On Location" items={onLocation}/>
+      </div>
+    <div className="schedule-btns">
+      <p className="click-to-schedule">Click on a makeup service above to start scheduling your service now.</p>
+      <Btn className="btn" to="/facials-peels"  text="Go to Facials & Peels" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/hair-removal"  text="Go to Waxing & Sprucing" backgroundColor="var(--grey)" color="var(--black)"/>
+    </div>
     </PageWrapper>
   </Layout>
   )
@@ -29,7 +35,7 @@ const Makeup = (props) => {
 
 export const query = graphql`
   {
-    inStudio: allAirtable(filter: {data: {category: {eq: "in-studio-makeup"}}}, sort: {fields: data___name, order: DESC}) {
+    inStudio: allAirtable(filter: {data: {category: {eq: "in-studio-makeup"}}}, sort: {fields: data___name, order: ASC}) {
       nodes {
         data {
           name
@@ -42,7 +48,7 @@ export const query = graphql`
         }
       }
     }
-    onLocation: allAirtable(filter: {data: {category: {eq: "on-location-makeup"}}}, sort: {fields: data___name, order: DESC}) {
+    onLocation: allAirtable(filter: {data: {category: {eq: "on-location-makeup"}}}, sort: {fields: data___name, order: ASC}) {
       nodes {
         data {
           name
@@ -55,7 +61,7 @@ export const query = graphql`
         }
       }
     }
-    seoImg:file(relativePath: { eq: "hil-head5.jpeg" }) {
+    seoImg:file(relativePath: { eq: "spa/hilary-spa-makeup.jpeg" }) {
       childImageSharp {
         fluid {
           src
@@ -70,7 +76,13 @@ const PageWrapper = styled.section`
     .menu-box {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: baseline;
+    }
+    .menu-box> div{
+      min-width: 250px;
+      max-width: 40%;
     }
     .head-span{
       color: white;
@@ -80,16 +92,22 @@ const PageWrapper = styled.section`
       text-align: center;
       width: 100%;
     }
-    .btn{
-      display: block;
-      margin: 1rem auto 2rem;
-      width: fit-content;
-    }
     .click-to-schedule {
       font-size: 0.9rem;
       font-style: italic;
       margin-top: 1rem;
       text-align: center;
+    }
+    .schedule-btns{
+      margin: 0 auto;
+      margin-top: 3rem;
+      width: 100%;
+
+      .btn{
+        display: block;
+        margin: 2rem auto 0;
+        max-width: fit-content;
+      }
     }
   }
 `
