@@ -9,8 +9,7 @@ const Makeup = (props) => {
   const {data:{onLocation}} = props
   const {data:{inStudio}} = props
   return(
-  <Layout img={props.data.seoImg.childImageSharp.fluid.src}
-    subtitle="Looking your best makes you feel better | ">
+  <Layout>
     <SEO title="Makeup, Waxing & Lash Extensions in Napa, CA" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about makeup, lash extension, & facial rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
