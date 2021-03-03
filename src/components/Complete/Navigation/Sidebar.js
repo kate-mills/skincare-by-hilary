@@ -20,15 +20,16 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
           </button>
         </div>
         <ul className="links">
+          {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
           {navigationLinks.map((link, index) => {
+
             return (
-              <li key={index}>
+              <li key={index} onClick={toggleSidebar} onKeyPress={toggleSidebar}>
                 {' '}
-                <Link to={link.path} onClick={toggleSidebar}>
+                <Link to={link.path}>
                   {link.page}
                 </Link>
-                <SidebarSubmenu links={link.links}
-                toggleSidebar/>
+                <SidebarSubmenu links={link.links}/>
               </li>
 
             )
