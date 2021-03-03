@@ -13,15 +13,21 @@ const HairRemoval = (props) => {
     <SEO title="Waxing & Lash Extensions in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about hair removal & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."/>
     <PageWrapper>
-      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
+      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src} position="50% 90%">
         <span className="head-span">Hair Removal & Lash Extensions</span>
       </PageHeader>
-      <p className="click-to-schedule">Click a service below to get scheduled with Hilary.</p>
+      <p className="click-to-schedule">Click on a waxing & sprucing service below to start scheduling now.</p>
+
       <section className="menu-box">
         <ServiceItems category="Waxing & Sprucing" items={hr} warning="*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users." mini />
         <ServiceItems category="Extras" items={extras} mini/>
       </section>
+      <p className="click-to-schedule">Click on a waxing & sprucing service above to start scheduling now.</p>
+
       <Btn className="btn" to="/schedule" state={{name: "Waxing, Sprucing, & Shaping", time: "30 min", warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."}} text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/facials-peels"  text="View Facials & Peels" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/makeup"  text="View Makeup" backgroundColor="var(--grey)" color="var(--black)"/>
+
     </PageWrapper>
   </Layout>
   )
