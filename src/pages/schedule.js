@@ -11,7 +11,7 @@ const Contact = (props) => {
   return (
     <Layout>
       <SEO
-        title="Schedule A Facial With Hilary"
+        title="Schedule A Facial Rejuvenation Treatment | Skincare By Hilary"
         description="Schedule a facial rejuvenation treatment with Licensed Esthetician, Hilay Molloy in Napa, CA now."
         image={props.data.seoImg.childImageSharp.fluid.src}
       />
