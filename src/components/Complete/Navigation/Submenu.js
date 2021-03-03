@@ -46,27 +46,22 @@ const Submenu = () => {
 const SubmenuWrapper = styled.aside`
   & {
     background: var(--grey);
-    padding: 0 1rem;
     position: absolute;
     transform: translateX(-50%) translateY(3%);
     z-index: 1;
   }
   &.submenu.hide { display: none; }
   &.submenu.show { display: unset; }
+  & .sublink:first-of-type{
+    margin-top: 1rem;
+  }
   & .sublink{
     display: block;
-    border-bottom: 2px solid #ccccccaa;
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
   }
-  &.submenu.show  .sublink:first-of-type {
-    border-top: 2px solid #ccccccaa;
-  }
-  &.submenu.show  .sublink:last-of-type {
-    margin-bottom: 0.2rem;
-  }
   & .sublink:hover{
-    /*border-bottom: 2px solid var(--black);*/
+    color: #5c5c00;
   }
 `
 export default Submenu
