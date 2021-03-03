@@ -8,7 +8,7 @@ import { SEO, Btn, FluidImage, ServiceItems, Banner } from "../components/Comple
 const FacialsPeels = (props) => {
   return(
   <Layout>
-    <SEO title="Facials, Peels, & Accoutrements in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
+    <SEO title="Facials, Peels, & Accoutrements with Hilary in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
