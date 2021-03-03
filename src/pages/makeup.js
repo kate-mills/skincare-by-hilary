@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
+import { SEO, Btn, FluidImage, ServiceItems, Banner } from "../components/Complete"
 
 const Makeup = (props) => {
   const {data:{onLocation}} = props
@@ -15,9 +15,9 @@ const Makeup = (props) => {
       description="Learn about makeup, lash extension, & facial rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src} position="40% 50%">
-        <span className="head-span">Makeup Services</span>
-      </PageHeader>
+      <Banner title="Makeup Services" >
+        <FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/>
+      </Banner>
       <p className="click-to-schedule">Click on a makeup service below to start scheduling your service now.</p>
       <div className="menu-box">
         <ServiceItems category="In Studio" items={inStudio} />
@@ -61,7 +61,7 @@ export const query = graphql`
         }
       }
     }
-    seoImg:file(relativePath: { eq: "spa/hilary-spa-makeup.jpeg" }) {
+    seoImg:file(relativePath: { eq: "skincare-by-hilary-makeup.jpg" }) {
       childImageSharp {
         fluid {
           src

@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
+import { SEO, Btn, FluidImage, ServiceItems, Banner } from "../components/Complete"
 
 const FacialsPeels = (props) => {
   return(
@@ -12,11 +12,9 @@ const FacialsPeels = (props) => {
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src}>
-
-        <span className="head-span">Facials, Peels, & Accoutrements</span>
-      </PageHeader>
-
+      <Banner title="Facials, Peels, & Accoutrements" >
+        <FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/>
+      </Banner>
       <p className="click-to-schedule">Click on a service below to get scheduled now.</p>
 
       <section className="menu-box">
@@ -59,7 +57,7 @@ export const query = graphql`
       }
     }
 
-    seoImg:file(relativePath: { eq: "hil-head4.jpeg" }) {
+    seoImg:file(relativePath: { eq: "skincare-by-hilary-facial.jpg" }) {
       childImageSharp {
         fluid {
           src
@@ -70,41 +68,30 @@ export const query = graphql`
   }
 `
 const PageWrapper = styled.section`
-  & {
-    .menu-box{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      > :nth-child(1){
-        max-width: unset;
-      }
-    }
-    .head-span{
-      color: white;
-      display: block;
-      font-size: 2.5rem;
-      line-height: 2.5rem;
-      text-align: center;
-      width: 100%;
-    }
-    .btn{
-      display: block;
-      margin: 1rem auto 2rem;
-      width: fit-content;
-    }
-    .click-to-schedule {
-      font-size: 0.9rem;
-      font-style: italic;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    @media(min-width:768px){
-      .menu-box{
-        >:nth-child(1){
-          max-width: 60%;
-        }
-      }
-    }
+  .menu-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
+  .head-span{
+    color: white;
+    display: block;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  .btn{
+    display: block;
+    margin: 1rem auto 2rem;
+    width: fit-content;
+  }
+  .click-to-schedule {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  @media(min-width:768px){ .menu-box{ >:nth-child(1){ max-width: 60%; } } }
 `
 export default FacialsPeels
