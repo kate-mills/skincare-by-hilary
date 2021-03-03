@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, PageHeader, ServiceItems } from "../components/Complete"
+import { SEO, Btn, Banner, ServiceItems, FluidImage } from "../components/Complete"
 
 const HairRemoval = (props) => {
   const {data:{hr}} = props
@@ -14,9 +14,9 @@ const HairRemoval = (props) => {
     <SEO title="Waxing & Lash Extensions in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about hair removal & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."/>
     <PageWrapper>
-      <PageHeader img={props.data.seoImg.childImageSharp.fluid.src} position="85% 99%">
-        <span className="head-span">Hair Removal & Lash Extensions</span>
-      </PageHeader>
+
+      <Banner title="Hair Removal & Lash Extensions"><FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/></Banner>
+      
       <p className="click-to-schedule">Click on a waxing & sprucing service below to start scheduling now.</p>
 
       <section className="menu-box">
@@ -78,7 +78,7 @@ export const query = graphql`
         }
       }
     }
-    seoImg:file(relativePath: { eq: "spa/lash-extensions.jpg" }) {
+    seoImg:file(relativePath: { eq: "skincare-by-hilary-lashes.jpg" }) {
       childImageSharp {
         fluid {
           src
