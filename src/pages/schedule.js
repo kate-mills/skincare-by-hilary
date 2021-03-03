@@ -16,7 +16,7 @@ const Contact = (props) => {
         image={props.data.seoImg.childImageSharp.fluid.src}
       />
       <PageWrapper>
-        <Banner title="Get An Appointment">
+        <Banner title="Schedule An Appointment">
           <p className="form-instructions">Please call/text Hilary at <PhoneNumber/>, or use the form below and Hilary will get back to your as soon as she can.</p>
           <p className="form-instructions">Thank you!</p>
         </Banner>
