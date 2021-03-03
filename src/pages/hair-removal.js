@@ -78,7 +78,7 @@ export const query = graphql`
         }
       }
     }
-    seoImg:file(relativePath: { eq: "skincare-by-hilary-lashes.jpg" }) {
+    seoImg:file(relativePath: { eq: "skincare-by-hilary-app-lashes.jpg" }) {
       childImageSharp {
         fluid {
           src

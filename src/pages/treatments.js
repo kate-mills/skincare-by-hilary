@@ -7,7 +7,7 @@ import { SEO, FluidImage, Btn } from "../components/Complete"
 const Treatments = (props) => {
   return(
   <Layout>
-    <SEO title="Treatments" />
+    <SEO title="A Clinical Approach To Skincare | Skincare By Hilary" image={props.data.file.childImageSharp.fluid.src}/>
     <PageWrapper>
       <div className="flex-container">
         <div className="flex-item first">

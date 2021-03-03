@@ -15,7 +15,6 @@ module.exports = {
     image: `/images/default-image.jpg`, // ./static/images/
     siteUrl: `${siteUrl}`,
     title: `${companyName}`,
-    titleTemplate: `%s  ${companyName}`,
     twitterUsername: `@gatsbyjs`,
 
     organization: {
