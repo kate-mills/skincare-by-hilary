@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import { SEO, FluidImage, Btn } from "../components/Complete"
@@ -10,6 +10,19 @@ const Treatments = (props) => {
     <SEO title="Treatments" />
     <PageWrapper>
       <div className="flex-container">
+        <div className="flex-item first">
+        <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
+
+          <h2>Service Menu</h2>
+          <ul>
+          <li className="link"> <Link to="/makeup">Makeup</Link> </li>
+          <li className="link"> <Link to="/hair-removal">Hair Removal</Link> </li>
+          <li className="link"> <Link to="/facials-peels">Facials & Peels</Link> </li>
+          </ul>
+        </div>
+
+
+        
         <div className="flex-item">
           <h2>A Clinical Approach<span className="underline"/></h2>
           <p>Hilary offers a clinical approach to working magic on your skin.</p>
@@ -18,7 +31,6 @@ const Treatments = (props) => {
           <p>This, combined with her nurturing and intuitive touch, allows her to provide facial treatments that will bring new life to your skin!</p>
          <Btn className="container-btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" hoverColor="var(--primaryColor)" hoverBackground="var(--primaryDark)" />
         </div>
-        <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
       </div>
     </PageWrapper>
   </Layout>
@@ -55,6 +67,25 @@ const PageWrapper = styled.section`
       .container-btn{
         margin: 0 auto;
       }
+    }
+    .first{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .first > .fluid-img{
+      width: 100%;
+    }
+    .first > div.link{
+      text-align: center;
+    }
+    .link a{
+      padding: 0.2rem 1rem;
+    }
+    .link a:hover{
+      background: pink;
+      border-radius: 0.4rem;
     }
     @media(min-width: 768px ){
       .flex-container{

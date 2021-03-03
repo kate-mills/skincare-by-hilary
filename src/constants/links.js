@@ -18,7 +18,11 @@ const navigationLinks = [
       {
         page: "Hair Removal",
         path: "/hair-removal",
-      }
+      },
+      {
+        page: "Makeup",
+        path: "/makeup",
+      },
     ],
   },
   {
