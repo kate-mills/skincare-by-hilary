@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const ServiceItems = (props) => {
   return (
     <ServiceItemsWrapper className={props.mini ? `mini`: `` }>
-      <p className="category">{props.category}</p>
+      <h2 className="category">{props.category} <span className="underline"/></h2>
         {props.items.nodes.map(({data:treatment}, index)=> {
           return(
             <div key={index}>
@@ -43,13 +43,20 @@ const ServiceItemsWrapper = styled.div`
     max-width: 330px;
   }
   .category{
-    background: #7dc27233;
     color: var(--black);
     font-weight: 700;
     margin: 1.45rem auto;
     padding: 0 0.4rem;
     text-transform: uppercase;
     width: fit-content;
+    .underline {
+      display: block;
+      height: 3px;
+      background: var(--primaryColor);
+      margin: 0 auto;
+      margin-top: 0.25rem;
+      width: 50%;
+    }
   }
   h3{
     font-size: 1rem;
@@ -85,8 +92,10 @@ const ServiceItemsWrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
+  &.mini { height: fit-content;}
   &.mini .menu-item{
     box-sizing: border-box;
+    background: #cccccc38;
     display: grid
     grid-template-columns: 1.5fr, 0.5fr;
     max-width: 250px;

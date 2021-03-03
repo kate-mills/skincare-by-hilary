@@ -12,7 +12,6 @@ const Treatments = (props) => {
       <div className="flex-container">
         <div className="flex-item first">
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
-
           <h2>Service Menu</h2>
           <ul>
           <li className="link"> <Link to="/makeup">Makeup</Link> </li>
@@ -20,9 +19,6 @@ const Treatments = (props) => {
           <li className="link"> <Link to="/facials-peels">Facials & Peels</Link> </li>
           </ul>
         </div>
-
-
-        
         <div className="flex-item">
           <h2>A Clinical Approach<span className="underline"/></h2>
           <p>Hilary offers a clinical approach to working magic on your skin.</p>
