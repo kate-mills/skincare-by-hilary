@@ -14,9 +14,9 @@ const Home = (props) => {
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
           <h2>More<span className="underline"/></h2>
           <ul>
-          <li className="link"> <Link to="/makeup">Makeup</Link> </li>
-          <li className="link"> <Link to="/hair-removal">Hair Removal</Link> </li>
           <li className="link"> <Link to="/facials-peels">Facials & Peels</Link> </li>
+          <li className="link"> <Link to="/hair-removal">Hair Removal</Link> </li>
+          <li className="link"> <Link to="/makeup">Makeup</Link> </li>
           </ul>
         </div>
         <div className="flex-item">
