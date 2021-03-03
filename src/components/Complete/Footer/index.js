@@ -92,6 +92,7 @@ const FooterWrapper = styled.footer`
   }
   .address-box {
     font-size: 0.85rem;
+    margin: 0 1rem;
   }
   .tiny-last-p {
     font-size: 0.75rem;
