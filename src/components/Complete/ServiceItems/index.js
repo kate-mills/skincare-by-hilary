@@ -4,15 +4,16 @@ import styled from 'styled-components'
 
 const ServiceItems = (props) => {
   return (
-    <ServiceItemsWrapper className={props.mini ? `mini`: `` }>
+    <ServiceItemsWrapper className={props.mini ? `mini`: `` } warningWidth={props.warningWidth}>
       <h2 className="category">{props.category} <span className="underline"/></h2>
+      <div className="menu-items">
         {props.items.nodes.map(({data:treatment}, index)=> {
           return(
             <div key={index}>
               <Link to="/schedule" state={{
                 name: treatment.name,
                 time: treatment.time,
-                warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."
+                warning: props.warning,
                 }}>
                   <h3 className="menu-item">
                     <div className="name">{treatment.name} </div>
@@ -28,6 +29,7 @@ const ServiceItems = (props) => {
           })
         }
       {props.warning && <p className="warning">{props.warning}</p>}
+      </div>
       </ServiceItemsWrapper>
     )
 }
@@ -58,10 +60,22 @@ const ServiceItemsWrapper = styled.div`
       width: 50%;
     }
   }
-  h3{
+  &.mini { height: fit-content;}
+  &.mini .menu-item{
+    box-sizing: border-box;
+    background: #cccccc38;
+    display: grid
+    grid-template-columns: 1.5fr, 0.5fr;
+    max-width: 250px;
+  }
+  .menu-item{
+    box-sizing: border-box;
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     .name{}
     .time{
       color: forestgreen;
@@ -79,31 +93,21 @@ const ServiceItemsWrapper = styled.div`
       text-align: right;
     }
   }
-  .desc{
+  & .desc{
     background: #cccccc38;
     font-size: 0.8rem;
     margin: 0 auto 1.5rem;
     padding: 0 0.5rem;
     text-align: justify;
   }
-  & .menu-item{
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+  & .menu-items{
+    margin: 0 auto;
+    width: fit-content;
   }
-  &.mini { height: fit-content;}
-  &.mini .menu-item{
-    box-sizing: border-box;
-    background: #cccccc38;
-    display: grid
-    grid-template-columns: 1.5fr, 0.5fr;
-    max-width: 250px;
-  }
-  .warning{
+  & .warning {
     font-size: .75rem;
-    max-width: 300px;
     text-align: justify;
+    max-width: ${props => props.warningWidth ? props.warningWidth: `100%`};
   }
 `
 
