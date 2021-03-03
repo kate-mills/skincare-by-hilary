@@ -45,7 +45,7 @@ const ServiceItemsWrapper = styled.div`
   .category{
     background: #7dc27233;
     color: var(--black);
-    font-weight: 500;
+    font-weight: 700;
     margin: 1.45rem auto;
     padding: 0 0.4rem;
     text-transform: uppercase;
