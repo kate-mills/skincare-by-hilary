@@ -22,7 +22,7 @@ const Contact = (props) => {
         </Banner>
         <div className="flexible">
           <ContactForm treatment={props?.location?.state}/>
-          <iframe title="mobile-map" id="mobile-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.046439909996!2d-122.28386748445573!3d38.30159178944664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085065b831d4fd1%3A0x3dafacedbd87c495!2sOxbow%20Public%20Market!5e0!3m2!1sen!2sus!4v1614363736557!5m2!1sen!2sus" width="80%" height="450" style={{border:'0'}} allowFullScreen="" loading="lazy" passive="true"/>
+          <iframe title="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.9429823725263!2d-122.29631904885464!3d38.303988789207395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085065e23870405%3A0x5e6f6da1ff65ffae!2sParadigm%20Medical%20Aesthetics!5e0!3m2!1sen!2sus!4v1614735380577!5m2!1sen!2sus" width="600" height="450" style={{border:`0`}} allowfullscreen="" loading="lazy"></iframe>
         </div>
       </PageWrapper>
     </Layout>

@@ -21,22 +21,22 @@ module.exports = {
     organization: {
       address: {
         name: `${companyName}`,
-        street: `555 Example st.`,
+        street: `1812 Jefferson St.`,
         city: `Napa`,
         state: `CA`,
         zip: `94558`,
         country: `USA`,
       },
       description: `${description}`,
-      email: `mailto:skinandmakeup@yahoo.com`,
+      email: `mailto:skincarebyhilary@gmail.com`,
       displayEmail: {
-        prefix: `skinandmakeup`,
-        suffix: `@yahoo`,
+        prefix: `skincarebyhilary`,
+        suffix: `@gmail`,
         ext: `.com`,
       },
       geo: {
-        lat: 38.298606261163506,
-        long: -122.29030346027331,
+        lat: 38.30418834186992,
+        long: -122.29412004433584,
       },
       logo: `${siteUrl}/images/logo.png`, // ./static/images/
       name: `${companyName}`,
