@@ -24,7 +24,7 @@ const BannerWrapper = styled.div`
     & h1 {
       color: var(--black);
       font-weight: 300;
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       padding: 0 1rem;
       width: 99%;
       margin: 2rem auto;
