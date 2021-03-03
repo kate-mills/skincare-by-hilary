@@ -10,11 +10,11 @@ const Makeup = (props) => {
   const {data:{inStudio}} = props
   return(
   <Layout>
-    <SEO title="Makeup, Waxing & Lash Extensions in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
+    <SEO title="Makeup, Waxing & Lash Extensions with Hilary in Napa, CA | Skincare By Hilary" image={props.data.seoImg.childImageSharp.fluid.src}
       description="Learn about makeup, lash extension, & facial rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <Banner title="Makeup Services" >
+      <Banner title="Makeup with Hilary" >
         <FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/>
       </Banner>
       <p className="click-to-schedule">Click on a makeup service below to start scheduling your service now.</p>

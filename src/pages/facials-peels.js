@@ -12,7 +12,7 @@ const FacialsPeels = (props) => {
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <Banner title="Facials, Peels, & Accoutrements" >
+      <Banner title="Facials & Peels with Hilary" >
         <FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/>
       </Banner>
       <p className="click-to-schedule">Click on a service below to get scheduled now.</p>

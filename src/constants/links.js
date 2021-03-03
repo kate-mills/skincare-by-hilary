@@ -16,8 +16,8 @@ const navigationLinks = [
         path: "/facials-peels/",
       },
       {
-        page: "Hair Removal",
-        path: "/hair-removal",
+        page: "Waxing & Lashes",
+        path: "/wax-and-lash",
       },
       {
         page: "Makeup",
