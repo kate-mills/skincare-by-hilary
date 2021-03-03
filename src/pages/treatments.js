@@ -12,7 +12,7 @@ const Treatments = (props) => {
       <div className="flex-container">
         <div className="flex-item first">
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
-          <h2>Service Menu</h2>
+          <h2>More<span className="underline"/></h2>
           <ul>
           <li className="link"> <Link to="/makeup">Makeup</Link> </li>
           <li className="link"> <Link to="/hair-removal">Hair Removal</Link> </li>
@@ -36,15 +36,17 @@ const Treatments = (props) => {
 const PageWrapper = styled.section`
   & {
     .flex-container{
-      margin-bottom: 10px;
+      align-items: center;
       display:flex;
       flex-direction: column;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
+      margin-bottom: 10px;
       width: 100%;
     }
     h2{
-      max-width: fit-content;
+      text-align: center;
+      width: 100%;
       .underline{
         display:block;
         height: 3px;
@@ -60,9 +62,6 @@ const PageWrapper = styled.section`
       box-sizing: border-box;
       width: 100%;
       max-width: 500px;
-      .container-btn{
-        margin: 0 auto;
-      }
     }
     .first{
       display: flex;
@@ -80,7 +79,8 @@ const PageWrapper = styled.section`
       padding: 0.2rem 1rem;
     }
     .link a:hover{
-      background: pink;
+      color: var(--white);
+      background: var(--primaryColor);
       border-radius: 0.4rem;
     }
     @media(min-width: 768px ){
@@ -120,5 +120,4 @@ export const query = graphql`
     }
   }
 `
-export default Treatments 
-
+export default Treatments

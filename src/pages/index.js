@@ -79,7 +79,8 @@ const PageWrapper = styled.section`
       padding: 0.2rem 1rem;
     }
     .link a:hover{
-      background: pink;
+      color: var(--white);
+      background: var(--primaryColor);
       border-radius: 0.4rem;
     }
     @media(min-width: 768px ){
