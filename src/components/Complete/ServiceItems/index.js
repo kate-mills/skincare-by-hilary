@@ -106,8 +106,9 @@ const ServiceItemsWrapper = styled.div`
   }
   & .warning {
     font-size: .75rem;
-    text-align: justify;
     max-width: ${props => props.warningWidth ? props.warningWidth: `100%`};
+    white-space: pre-wrap;
+    letter-spacing: normal;
   }
 `
 

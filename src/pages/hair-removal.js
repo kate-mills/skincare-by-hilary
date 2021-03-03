@@ -15,7 +15,7 @@ const HairRemoval = (props) => {
       description="Learn about hair removal & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."/>
     <PageWrapper>
 
-      <Banner title="Hair Removal & Lash Extensions"><FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/></Banner>
+      <Banner title="Lash Extensions & Waxing"><FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/></Banner>
       
       <p className="click-to-schedule">Click on a waxing & sprucing service below to start scheduling now.</p>
 
