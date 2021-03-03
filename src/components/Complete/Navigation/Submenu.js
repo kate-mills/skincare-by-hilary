@@ -3,7 +3,7 @@ import { useGlobalContext } from '../../../context/context'
 import {Link} from 'gatsby'
 import styled from 'styled-components'
 
-const Submenu = () => {
+const Submenu = ({toggleSidebar}) => {
   const {
     isSubmenuOpen,
     closeSubmenu,
@@ -22,7 +22,9 @@ const Submenu = () => {
   return (
    <SubmenuWrapper
       className={`${isSubmenuOpen ? `submenu show` : `submenu hide`}`}
-      ref={container}>
+     ref={container}
+     onClick={toggleSidebar}
+   >
       <section>
         <div className={`submenu-center columns`}>
           {links.map((link, index) => {

@@ -27,7 +27,8 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
                 <Link to={link.path} onClick={toggleSidebar}>
                   {link.page}
                 </Link>
-                <SidebarSubmenu links={link.links}/>
+                <SidebarSubmenu links={link.links}
+                toggleSidebar/>
               </li>
 
             )
