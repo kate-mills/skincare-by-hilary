@@ -2,13 +2,16 @@ import React from "react"
 import {graphql, Link} from 'gatsby'
 import styled from 'styled-components'
 import Layout from "../components/layout"
-import { SEO, FluidImage, Btn } from "../components/Complete"
+import { SEO, FluidImage, Btn, Banner } from "../components/Complete"
 
 const Home = (props) => {
   return(
   <Layout>
     <SEO title="Skincare By Hilary" />
     <PageWrapper>
+      <Banner title="Skincare By Hilary">
+        <p className="p-title">Looking your best makes you feel better</p>
+      </Banner>
       <div className="flex-container">
         <div className="flex-item first">
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
@@ -35,6 +38,11 @@ const Home = (props) => {
 
 const PageWrapper = styled.section`
   & {
+    .p-title{
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      letter-spacing: var(--altSpacing);
+    }
     .flex-container{
       align-items: center;
       display:flex;
