@@ -20,7 +20,7 @@ const navigationLinks = [
         path: "/wax-and-lash",
       },
       {
-        page: "Makeup",
+        page: "Makeup Services",
         path: "/makeup",
       },
     ],
