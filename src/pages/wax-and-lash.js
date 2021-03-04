@@ -29,8 +29,8 @@ const HairRemoval = (props) => {
       <p className="click-to-schedule">Click on any wax & lash service above to get an appointment now.</p>
 
       <Btn className="btn" to="/schedule" state={{name: "Waxing, Sprucing, & Shaping", time: "30 min", warning: "*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users."}} text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
-      <Btn className="btn" to="/facials-peels"  text="View Facials & Peels" backgroundColor="var(--grey)" color="var(--black)"/>
-      <Btn className="btn" to="/makeup"  text="View Makeup" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/facials-peels"  text="Facials & Peels Menu" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/makeup"  text="Makeup Menu" backgroundColor="var(--grey)" color="var(--black)"/>
     </PageWrapper>
   </Layout>
   )

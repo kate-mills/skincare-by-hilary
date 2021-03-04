@@ -24,6 +24,9 @@ const FacialsPeels = (props) => {
       </section>
       <p className="click-to-schedule">Click on a facial service above to get an appointment now.</p>
       <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/wax-and-lash"  text="Waxing & Lashes Menu" backgroundColor="var(--grey)" color="var(--black)"/>
+      <Btn className="btn" to="/makeup"  text="Makeup Menu" backgroundColor="var(--grey)" color="var(--black)"/>
+
     </PageWrapper>
   </Layout>
   )
