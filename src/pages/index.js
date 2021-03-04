@@ -12,7 +12,7 @@ const Home = (props) => {
       <div className="flex-container">
         <div className="flex-item first">
         <FluidImage maxWidth="500px" fluid={props.data.file.childImageSharp.fluid}/>
-          <h2>More<span className="underline"/></h2>
+          <h2>Learn More<span className="underline"/></h2>
           <ul>
           <li className="link"> <Link to="/facials-peels">Facials & Peels</Link> </li>
           <li className="link"> <Link to="/hair-removal">Hair Removal</Link> </li>
@@ -46,14 +46,15 @@ const PageWrapper = styled.section`
     }
     h2{
       text-align: center;
+      margin: 0 auto 0.5rem;
       width: 100%;
       .underline{
+        background: var(--primaryColor);
         display:block;
         height: 3px;
-        background: var(--primaryColor);
         margin: 0 auto;
         margin-top: 0.25rem;
-        width: 50%;
+        width: 25%;
       }
     }
     .fluid-img,
@@ -65,23 +66,28 @@ const PageWrapper = styled.section`
     }
     .first{
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
     }
     .first > .fluid-img{
       width: 100%;
     }
-    .first > div.link{
-      text-align: center;
+    .first  ul,
+    .first  ul li{
+      margin: unset;
+      padding: unset;
     }
-    .link a{
-      padding: 0.2rem 1rem;
+    .first ul li a{
+      display: block;
+      font-size: 0.9rem;
+      margin: 0.5rem;
+      padding: 0.1rem 1rem;
+      white-space: none;
     }
-    .link a:hover{
-      color: var(--white);
+    .first ul li a:hover{
       background: var(--primaryColor);
       border-radius: 0.4rem;
+      color: var(--white);
     }
     @media(min-width: 768px ){
       .flex-container{
