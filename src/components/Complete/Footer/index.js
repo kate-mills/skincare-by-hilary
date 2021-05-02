@@ -18,8 +18,8 @@ const Footer = ()=>{
                   aria-label={`${label}`}
                   className={`${name}`}
                   href={`${url}`}
-                  rel="noopener noreferrer"
-                  target="_blank">
+                  title={`Go to Skincare By Hilary ${name} page`}
+                  >
                   {icon}
                 </a>
               </div>
