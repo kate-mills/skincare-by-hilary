@@ -36,6 +36,9 @@ const Footer = ()=>{
         <Address/>
       </div>
       <p className="tiny-last-p">All rights reserved. © {new Date().getFullYear()}</p>
+      <div>
+        <p className="tiny-last-p allydigitalsolutions"><a href="https://allydigitalsolutions.com">Website built by allydigitalsolutions.com</a></p>
+      </div>
     </FooterWrapper>
     </div>
   )
@@ -96,6 +99,11 @@ const FooterWrapper = styled.footer`
   }
   .tiny-last-p {
     font-size: 0.75rem;
+    margin-bottom: .2rem;
+  }
+  .allydigitalsolutions{
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
   }
   @media (min-width: 768px) {
     .phone-email-box{
