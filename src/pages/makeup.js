@@ -60,7 +60,8 @@ export const query = graphql`
         }
       }
     }
-    seoImg:file(relativePath: { eq: "skincare-by-hilary-app-makeup.jpg" }) {
+    seoImg:file(relativePath: { eq: "hilary molloy esthetician.jpg" }) {
+
       childImageSharp {
         fluid {
           src
