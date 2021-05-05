@@ -7,10 +7,10 @@ import { SEO, FluidImage, Btn, Banner } from "../components/Complete"
 const Home = (props) => {
   return(
   <Layout>
-    <SEO title="Skincare By Hilary" />
+    <SEO title="Skincare in Napa by Hilary Molloy" />
     <PageWrapper>
-      <Banner title="Skincare By Hilary">
-        <p className="p-title">Looking your best makes you feel better</p>
+      <Banner title="Skincare By Hilary Molloy">
+        <p className="p-title">A clinical approach to working magic on your skin.</p>
       </Banner>
       <div className="flex-container">
         <div className="flex-item first">
@@ -24,10 +24,18 @@ const Home = (props) => {
         </div>
         <div className="flex-item">
           <h2>About Hilary<span className="underline"/></h2>
-          <p>Hilary offers a clinical approach to working magic on your skin.</p>
-          <p>Her experience as an esthetician spans well over a decade.</p>
-          <p>Having worked in both plastic surgery and dermatology she is able to offer you a thorough skin analysis, as well as a broad range of treatment options, perfectly suited to your needs. </p>
-          <p>This, combined with her nurturing and intuitive touch, allows her to provide facial treatments that will bring new life to your skin!</p>
+          <p>
+            Hilary's experience as an Esthetician in the Napa Valley spans well over a decade.
+          </p>
+          <p>
+            Having worked in both plastic surgery and dermatology, 
+            she can offer you a thorough skin analysis, 
+            as well as a broad range of treatments perfectly suited to your needs.
+          </p>
+          <p>
+            Combined with her nurturing and intuitive touch, 
+            it allows her to provide facial treatments that will bring new life to your skin!
+          </p>
          <Btn className="container-btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)" hoverColor="var(--primaryColor)" hoverBackground="var(--primaryDark)" />
         </div>
       </div>
@@ -71,6 +79,10 @@ const PageWrapper = styled.section`
       box-sizing: border-box;
       width: 100%;
       max-width: 500px;
+      p{
+        padding-left: 1rem;
+        letter-spacing: 1px;
+      }
     }
     .first{
       display: flex;
@@ -124,7 +136,7 @@ export const query = graphql`
         }
       }
     }
-    file(relativePath: { eq: "default-image.jpg" }) {
+    file(relativePath: { eq: "hilary molloy esthetician.jpg" }) {
       childImageSharp {
         fluid {
           src

@@ -34,10 +34,11 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
 
             )
           })}
+          <li>
+            <a href="https://hideandwild.com">Hide + Wild</a>
+          </li>
           <li className="tel-wrapper">
             <PhoneNumber/>
-          </li>
-          <li>
           </li>
         </ul>
       </aside>

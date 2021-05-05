@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, FluidImage, ServiceItems, Banner } from "../components/Complete"
+import { SEO, Btn, ServiceItems, Banner } from "../components/Complete"
 
 const FacialsPeels = (props) => {
   return(
@@ -12,17 +12,15 @@ const FacialsPeels = (props) => {
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <Banner title="Facials & Peels with Hilary" >
-        <FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/>
+      <Banner title="Facials & Peels" subtitle="in Napa with Hilary Molloy">
+        <p className="click-to-schedule">Click on a facial or peel service below to start booking your an appointment now.</p>
       </Banner>
-      <p className="click-to-schedule">Click on a facial or peel service below to start booking your an appointment now.</p>
 
       <section className="menu-box">
         <ServiceItems items={props.data.fp} category="Facials & Peels" />
         <ServiceItems items={props.data.extras} category="Extras" mini
         className="extras"/>
       </section>
-      <p className="click-to-schedule">Click on a facial or peel service below to start booking your an appointment now.</p>
       <Btn className="btn" to="/schedule" text="Schedule an appointment" backgroundColor="var(--grey)" color="var(--black)"/>
       <Btn className="btn" to="/wax-and-lash"  text="Waxing & Lashes Menu" backgroundColor="var(--grey)" color="var(--black)"/>
       <Btn className="btn" to="/makeup"  text="Makeup Menu" backgroundColor="var(--grey)" color="var(--black)"/>

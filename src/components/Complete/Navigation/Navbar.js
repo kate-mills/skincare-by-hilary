@@ -42,6 +42,9 @@ const Nav = ({toggleSidebar}) => {
             )
           })}
           <li>
+            <a href="https://hideandwild.com">Hide + Wild</a>
+          </li>
+          <li>
             <PhoneNumber className="phone"/>
           </li>
         </ul>

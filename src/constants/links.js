@@ -9,7 +9,7 @@ const navigationLinks = [
   },
   {
     page: "Treatments",
-    path: "/treatments/",
+    path: "/facials-peels/",
     links: [
       {
         page: "Facials & Peels",

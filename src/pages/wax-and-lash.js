@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import { SEO, Btn, Banner, ServiceItems, FluidImage } from "../components/Complete"
+import { SEO, Btn, Banner, ServiceItems } from "../components/Complete"
 
 const HairRemoval = (props) => {
   const {data:{hr}} = props
@@ -15,10 +15,9 @@ const HairRemoval = (props) => {
       description="Learn about waxing & lash extension procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."/>
     <PageWrapper>
 
-      <Banner title="Waxing & Lashes with Hilary"><FluidImage fluid={props.data.seoImg.childImageSharp.fluid} maxWidth="1000px"/></Banner>
-      
-      <p className="click-to-schedule">Click on any wax & lash service below to get an appointment now.</p>
-
+      <Banner title="Waxing & Lashes" subtitle="in Napa with Hilary Molloy">
+        <p className="click-to-schedule">Click on any wax & lash service below to get an appointment now.</p>
+      </Banner>
       <section className="menu-box">
         <ServiceItems category="Waxing & Sprucing" items={hr} warning="*Facial waxing requires the discontinuation of retinoids for 7-10 days prior and is contraindicated for Accutane® users." mini warningWidth="250px"/>
         <ServiceItems category="Extras" items={extras} mini/>
