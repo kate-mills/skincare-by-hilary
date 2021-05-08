@@ -45,23 +45,21 @@ const Submenu = () => {
 
 const SubmenuWrapper = styled.aside`
   & {
+    border-top: 1px solid var(--white);
     background: var(--grey);
     position: absolute;
-    transform: translateX(-50%) translateY(3%);
+    transform: translateX(-50%) translateY(12%);
     z-index: 1;
   }
   &.submenu.hide { display: none; }
   &.submenu.show { display: unset; }
-  & .sublink:first-of-type{
-    margin-top: 1rem;
-  }
   & .sublink{
     display: block;
     padding: 1rem;
     text-align: center;
   }
   & .sublink:hover{
-    color: #5c5c00;
+    background-color: var(--brightWhite);
   }
 `
 export default Submenu

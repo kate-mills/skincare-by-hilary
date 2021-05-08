@@ -1,11 +1,13 @@
 :root{
   /* colors start */
-  --black: #000000cc;
-  --white: #ffffff;
-  --grey: gainsboro;
+  --black: #212121;
+  --brightWhite: #FFF;
+  --white:#FAFAFA;
+  --grey: #EEEEEE;
   --darkGrey: #a9a9a9ff;
+  --darkerGrey: #616161;
   --primaryColor: #78909C;
-  --primaryDark: #455A64; /* used in Title component */
+  --primaryDark: #546E7A;
 
   /* colors end */
   --mainFF: 'Montserrat', sans-serif; /* font-family */
@@ -622,16 +624,16 @@ pre tt:after {
   text-align: center;
   margin: 0 auto;
 }
-
+div > p.primary-dark{
+  color: var(--primaryDark);
+  font-weight: initial;
+}
 /* End utility classes */
 
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
-}
-.dots{
-background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
 }
 
 .stars{

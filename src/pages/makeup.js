@@ -14,7 +14,9 @@ const Makeup = (props) => {
       description="Learn about makeup, lash extension, & facial rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <Banner title="Makeup Services" subtitle="in Napa with Hilary Molloy" >
+      <Banner title="Makeup Services" subtitle="With Hilary Molloy" >
+        <p className="primary-dark">Napa Valley, CA</p>
+
       <p className="click-to-schedule">Click on a makeup application service below to start scheduling your service now.</p>
       </Banner>
       <div className="menu-box">
@@ -95,7 +97,6 @@ const PageWrapper = styled.section`
     .click-to-schedule {
       font-size: 0.9rem;
       font-style: italic;
-      margin-top: 1rem;
       text-align: center;
     }
     .schedule-btns{

@@ -12,7 +12,8 @@ const FacialsPeels = (props) => {
       description="Learn about skin rejuvenation procedures performed by Hilary Molloy. Hilary serves Napa, CA and surrounding areas."
     />
     <PageWrapper>
-      <Banner title="Facials & Peels" subtitle="in Napa with Hilary Molloy">
+      <Banner title="Facials & Peels" subtitle="With Hilary Molloy">
+        <p className="primary-dark">Napa Valley, CA</p>
         <p className="click-to-schedule">Click on a facial or peel service below to start booking your an appointment now.</p>
       </Banner>
 
