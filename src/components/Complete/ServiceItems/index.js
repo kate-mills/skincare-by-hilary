@@ -76,9 +76,8 @@ const ServiceItemsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    .name{}
     .time{
-      color: forestgreen;
+      color: var(--primaryDark);
       font-size: 0.75rem;
       font-style: italic;
       font-weight:300;
