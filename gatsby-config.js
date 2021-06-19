@@ -12,7 +12,7 @@ module.exports = {
     author: `kate-mills`,
     altUrl: `${netlifyUrl}`,
     dateModified: `${new Date().toISOString()}`,
-    image: `/images/default-image.jpg`, // ./static/images/
+    image: `/images/skincare-by-hilary.jpg`, // ./static/images/
     siteUrl: `${siteUrl}`,
     title: `${companyName}`,
     twitterUsername: `@gatsbyjs`,
